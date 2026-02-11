@@ -14,9 +14,10 @@ import { encodeFunctionData } from "viem";
 type OwnerPanelProps = {
     contractBalance: { value: bigint; symbol: string; decimals: number } | undefined;
     showToast: (toast: { message: string; type: "success" | "error" }) => void;
+    onWithdrawSuccess: () => void;
 };
 
-export function OwnerPanel({ contractBalance, showToast }: OwnerPanelProps) {
+export function OwnerPanel({ contractBalance, showToast, onWithdrawSuccess }: OwnerPanelProps) {
     const withdrawCalls = [
         {
             to: CONTRACT_ADDRESS,
@@ -48,6 +49,7 @@ export function OwnerPanel({ contractBalance, showToast }: OwnerPanelProps) {
                             message: "Withdrawal successful!",
                             type: "success",
                         });
+                        onWithdrawSuccess();
                     }}
                     onError={(error) => {
                         console.error("Withdraw error:", error);

@@ -31,8 +31,8 @@ export default function Home() {
     functionName: "getMessages",
     chainId: CHAIN.id,
     query: {
-      refetchInterval: false, // Disable aggressive polling, use events instead
-      staleTime: 60000 // Keep data fresh for a minute unless invalidated
+      refetchInterval: false,
+      staleTime: 0, // Always fetch fresh data when refetch() is called
     },
   });
 
@@ -59,7 +59,7 @@ export default function Home() {
   });
 
   // Read contract balance (for owner panel)
-  const { data: contractBalance } = useBalance({
+  const { data: contractBalance, refetch: refetchBalance } = useBalance({
     address: CONTRACT_ADDRESS,
     chainId: CHAIN.id,
     query: { refetchInterval: 10000 },
@@ -120,8 +120,9 @@ export default function Home() {
           setIsApproved={setIsApproved}
           showToast={showToast}
           onPostSuccess={() => {
-            // Optimistic update or wait for event listener
-            setTimeout(() => refetch(), 1000);
+            // Refetch messages after a short delay to let the chain confirm
+            setTimeout(() => refetch(), 2000);
+            setTimeout(() => refetch(), 5000);
           }}
           isOwner={!!isOwner}
         />
@@ -131,6 +132,7 @@ export default function Home() {
           <OwnerPanel
             contractBalance={contractBalance}
             showToast={showToast}
+            onWithdrawSuccess={() => refetchBalance()}
           />
         )}
 
