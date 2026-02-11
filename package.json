@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.26",
-    "@coinbase/onchainkit": "0.38.19",
+    "@coinbase/onchainkit": "^1.1.2",
     "@tanstack/react-query": "^5.90.21",
     "@types/canvas-confetti": "^1.9.0",
     "ai": "^6.0.79",
@@ -20,7 +20,7 @@
     "react": "^18",
     "react-dom": "^18",
     "viem": "^2.45.3",
-    "wagmi": "^2.19.5",
+    "wagmi": "^3.4.3",
     "zod": "^4.3.6"
   },
   "devDependencies": {
