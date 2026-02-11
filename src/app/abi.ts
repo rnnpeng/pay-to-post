@@ -50,6 +50,15 @@ export const GUESTBOOK_ABI = [
     inputs: [],
     outputs: [{ name: "", type: "address" }],
   },
+  {
+    type: "event",
+    name: "MessagePosted",
+    inputs: [
+      { name: "sender", type: "address", indexed: true },
+      { name: "content", type: "string", indexed: false },
+      { name: "timestamp", type: "uint256", indexed: false },
+    ],
+  },
 ] as const;
 
 export type Message = {

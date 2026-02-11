@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pay-to-Post Guestbook 📜
 
-## Getting Started
+A decentralized guestbook on the Base blockchain where users pay **0.001 ETH** to leave a permanent message. Built with **Next.js**, **OnchainKit**, and **Tailwind CSS**.
 
-First, run the development server:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Network](https://img.shields.io/badge/network-Base-blue)
+
+## ✨ Features
+
+-   **🖊️ Pay-to-Post**: Write a message for 0.001 ETH (plus gas).
+-   **🤖 AI Assistance**: Auto-generate messages using AI.
+-   **🛡️ Content Moderation**: AI-powered safety checks for content.
+-   **💰 Tipping**: Send tips (0.001 ETH) directly to message authors.
+-   **📢 Social Sharing**: Share posts on **X (Twitter)** and **Warpcast**.
+-   **⚡ Real-time Updates**: Live message feed updates via blockchain events.
+
+## 🛠️ Tech Stack
+
+-   **Frontend**: Next.js 14, React 18, Tailwind CSS
+-   **Blockchain Interaction**: [OnchainKit](https://onchainkit.xyz), Wagmi, Viem
+-   **Smart Contract**: Solidity (Deployed on Base)
+-   **Styling**: Framer Motion (Animations), Canvas Confetti
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   Node.js 18+
+-   Coinbase Wallet or any EVM-compatible wallet
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/pay-to-post.git
+    cd pay-to-post
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    npm install --legacy-peer-deps (if encountering ESLint conflicts)
+    ```
+
+3.  **Set up Environment Variables:**
+    Create a `.env.local` file:
+    ```env
+    NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_api_key
+    NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_project_id
+    NEXT_PUBLIC_CHAIN=base # or sepolia
+    ```
+
+4.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+5.  Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📜 Smart Contract
+
+The Guestbook contract is deployed on **Base**:
+`0xB71C596aC966125d03960A43c762E86e51040F9B`
+
+[View on Basescan](https://basescan.org/address/0xB71C596aC966125d03960A43c762E86e51040F9B)
+
+## 🧪 Testing
+
+Run unit tests for utility functions:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx vitest run
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with 💙 using [OnchainKit](https://onchainkit.xyz).

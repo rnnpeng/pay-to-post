@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Providers from "./providers";
+import Footer from "./components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,11 +16,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Pay-to-Post Guestbook",
-  description: "On-chain guestbook on Base — pay 0.001 ETH to post",
+  title: "Guestbook | Write Your Message On-Chain",
+  description: "Leave your mark on the Base blockchain forever. Pay 0.001 ETH to post a message on the decentralized guestbook.",
   openGraph: {
-    title: "Pay-to-Post Guestbook",
-    description: "On-chain guestbook on Base — pay 0.001 ETH to post",
+    title: "Guestbook | Write Your Message On-Chain",
+    description: "Leave your mark on the Base blockchain forever. Pay 0.001 ETH to post a message on the decentralized guestbook.",
     type: "website",
   },
 };
@@ -37,7 +38,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

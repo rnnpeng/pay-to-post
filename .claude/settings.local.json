@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@14:*)",
+      "Bash(npm install:*)",
+      "Bash(npx next build)",
+      "Bash(npm ls:*)",
+      "Bash(npx -y viem@latest -e:*)",
+      "Bash(node -e:*)",
+      "Bash(npm run build:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote add origin https://github.com/rnnpeng/pay-to-post.git)",
+      "Bash(git status -u)",
+      "Bash(git add .gitignore README.md contracts/Guestbook.sol next.config.mjs package-lock.json package.json postcss.config.mjs public/onchainkit.css src/app/abi.ts src/app/api/check-content/route.ts src/app/api/generate/route.ts src/app/error.tsx src/app/favicon.ico src/app/fonts/GeistMonoVF.woff src/app/fonts/GeistVF.woff src/app/globals.css src/app/layout.tsx src/app/page.tsx src/app/providers.tsx tailwind.config.ts tsconfig.json)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: Pay-to-Post Onchain Guestbook\n\nFull-featured Web3 guestbook on Base with:\n- OnchainKit wallet connection + identity resolution\n- AI ghostwriter \\(Vercel AI SDK + GPT-4o-mini\\)\n- AI content moderation \\(\"The Bouncer\"\\) before posting\n- Owner withdraw panel with contract balance display\n- Message search/filter, relative timestamps, toast notifications\n- Env-based chain config \\(Base Sepolia / Base mainnet\\)\n- Responsive dark theme with fade-in animations\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push -u origin main)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd rate limiting to API routes \\(10 req/min per IP\\)\n\nProtects /api/generate and /api/check-content from abuse\nto prevent runaway OpenAI costs in production.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)"
+    ]
+  }
+}
