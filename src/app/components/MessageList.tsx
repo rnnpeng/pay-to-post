@@ -121,7 +121,7 @@ export function MessageList({
                                                     chain={CHAIN}
                                                     className="!bg-transparent !p-0 hover:opacity-80 transition-opacity"
                                                 >
-                                                    <Avatar className="h-5 w-5 mr-2" />
+                                                    <Avatar className="h-5 w-5 mr-2 rounded-full" />
                                                     <Name className="text-xs text-gray-400 font-medium" />
                                                 </Identity>
                                                 <span className="font-mono text-[10px] opacity-70">{timeAgo(msg.timestamp)}</span>

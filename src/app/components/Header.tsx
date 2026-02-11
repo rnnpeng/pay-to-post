@@ -42,12 +42,12 @@ export function Header({ chainLabel, showToast }: HeaderProps) {
                 </button>
                 <Wallet>
                     <ConnectWallet className="bg-blue-600 hover:bg-blue-700 text-white">
-                        <Avatar className="h-6 w-6" />
+                        <Avatar className="h-6 w-6 rounded-full" />
                         <Name />
                     </ConnectWallet>
                     <WalletDropdown>
                         <Identity className="px-4 pt-3 pb-2" hasCopyAddressOnClick>
-                            <Avatar />
+                            <Avatar className="rounded-full" />
                             <Name />
                             <Address />
                         </Identity>

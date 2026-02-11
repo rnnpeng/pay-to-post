@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "@coinbase/onchainkit/styles.css";
 import "./globals.css";
 import Providers from "./providers";
 import Footer from "./components/Footer";
@@ -32,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="stylesheet" href="/onchainkit.css" />
-      </head>
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
