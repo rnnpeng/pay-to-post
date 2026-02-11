@@ -1,7 +1,7 @@
 import { base, baseSepolia } from "viem/chains";
 
 export const CHAIN =
-  process.env.NEXT_PUBLIC_CHAIN === "mainnet" ? base : baseSepolia;
+  process.env.NEXT_PUBLIC_CHAIN === "sepolia" ? baseSepolia : base;
 
 export const CONTRACT_ADDRESS = (process.env.NEXT_PUBLIC_CONTRACT_ADDRESS ||
   "0xB71C596aC966125d03960A43c762E86e51040F9B") as `0x${string}`;
