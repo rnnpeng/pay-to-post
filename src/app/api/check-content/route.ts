@@ -1,6 +1,8 @@
 import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
+import { headers } from "next/headers";
+import { rateLimit } from "@/app/lib/rate-limit";
 
 const schema = z.object({
   isSafe: z.boolean(),
@@ -8,6 +10,17 @@ const schema = z.object({
 });
 
 export async function POST(req: Request) {
+  const headersList = await headers();
+  const ip = headersList.get("x-forwarded-for") ?? "unknown";
+  const { ok } = rateLimit(ip);
+
+  if (!ok) {
+    return Response.json(
+      { isSafe: false, reason: "Too many requests. Try again in a minute." },
+      { status: 429 }
+    );
+  }
+
   const { message } = await req.json();
 
   if (!message || typeof message !== "string" || !message.trim()) {
